@@ -4,10 +4,20 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware} from 'redux';
+import rootReducer from './reducers/rootReducer';
+//import authReducer from './authReducer';
+import reduxPromise from 'redux-promise';
+
+const theStore = applyMiddleware(reduxPromise)(createStore)(rootReducer);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={theStore}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root')
 );
 
