@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import './App.css';
 import Home from './pages/Home/Home';
-import Navbar from './utility/NavBar/Navbar'
+import NavBar from './utility/NavBar/NavBar';
+//import SearchBox from './pages/SearchBox';
 
 class App extends Component{
 
